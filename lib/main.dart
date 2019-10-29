@@ -3,19 +3,12 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
-final dummySnapshot = [
- {"name": "Filip", "votes": 15},
- {"name": "Abraham", "votes": 14},
- {"name": "Richard", "votes": 11},
- {"name": "Ike", "votes": 10},
- {"name": "Justin", "votes": 1},
-];
 
 class MyApp extends StatelessWidget {
  @override
  Widget build(BuildContext context) {
    return MaterialApp(
-     title: 'Baby Names',
+     title: 'My Lil One',
      home: MyHomePage(),
    );
  }
@@ -32,25 +25,31 @@ class _MyHomePageState extends State<MyHomePage> {
  @override
  Widget build(BuildContext context) {
    return Scaffold(
-     appBar: AppBar(title: Text('Baby Name Votes')),
+     appBar: AppBar(title: Text('Lil ONE')),
      body: _buildBody(context),
    );
  }
 
  Widget _buildBody(BuildContext context) {
-   // TODO: get actual snapshot from Cloud Firestore
-   return _buildList(context, dummySnapshot);
- }
+ return StreamBuilder<QuerySnapshot>(
+   stream: Firestore.instance.collection('child').snapshots(),
+   builder: (context, snapshot) {
+     if (!snapshot.hasData) return LinearProgressIndicator();
 
- Widget _buildList(BuildContext context, List<Map> snapshot) {
+     return _buildList(context, snapshot.data.documents);
+   },
+ );
+}
+
+ Widget _buildList(BuildContext context, List<DocumentSnapshot> snapshot) {
    return ListView(
      padding: const EdgeInsets.only(top: 20.0),
      children: snapshot.map((data) => _buildListItem(context, data)).toList(),
    );
  }
 
- Widget _buildListItem(BuildContext context, Map data) {
-   final record = Record.fromMap(data);
+ Widget _buildListItem(BuildContext context, DocumentSnapshot data) {
+ final record = Record.fromSnapshot(data);
 
    return Padding(
      key: ValueKey(record.name),
@@ -62,8 +61,8 @@ class _MyHomePageState extends State<MyHomePage> {
        ),
        child: ListTile(
          title: Text(record.name),
-         trailing: Text(record.votes.toString()),
-         onTap: () => print(record),
+         trailing: Text(record.age.toString()),
+         onTap: () => record.reference.updateData({'age': record.age + 1}),
        ),
      ),
    );
@@ -72,18 +71,18 @@ class _MyHomePageState extends State<MyHomePage> {
 
 class Record {
  final String name;
- final int votes;
+ final int age;
  final DocumentReference reference;
 
  Record.fromMap(Map<String, dynamic> map, {this.reference})
      : assert(map['name'] != null),
-       assert(map['votes'] != null),
+       assert(map['age'] != null),
        name = map['name'],
-       votes = map['votes'];
+       age = map['age'];
 
  Record.fromSnapshot(DocumentSnapshot snapshot)
      : this.fromMap(snapshot.data, reference: snapshot.reference);
 
  @override
- String toString() => "Record<$name:$votes>";
+ String toString() => "Record<$name:$age>";
 }
