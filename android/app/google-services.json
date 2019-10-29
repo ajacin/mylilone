@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "937269694895",
+    "firebase_url": "https://my-lil-one.firebaseio.com",
+    "project_id": "my-lil-one",
+    "storage_bucket": "my-lil-one.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:937269694895:android:118ae1b46b4709e0ffdf5a",
+        "android_client_info": {
+          "package_name": "com.example.my_lil_one"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "937269694895-atnklf75ke04dlke03tto6t7gps6inr5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9SVHR9MEA9dSGzUdh-2eZ-N4UAWTsUw4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "937269694895-atnklf75ke04dlke03tto6t7gps6inr5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
