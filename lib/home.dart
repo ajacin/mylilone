@@ -16,9 +16,9 @@ bool floatingButton = true;
 
 void initState() {
     super.initState();
-    _tabController = TabController(vsync:this,initialIndex: 1,length:2 );
+    _tabController = TabController(vsync:this,initialIndex: 0,length:2 );
     _tabController.addListener((){
-    if(_tabController.index ==1){
+    if(_tabController.index ==0){
         floatingButton = true;
       } else {
         floatingButton =false;
@@ -35,11 +35,11 @@ void initState() {
 Widget build(BuildContext context){
   return Scaffold(
     appBar: AppBar(
-      title: Text("My Lil One"),
+      title: Text("LIL ONE"),
         elevation: 0.7,
         bottom: TabBar(
           controller: _tabController,
-          indicatorColor: Colors.white,
+          indicatorColor: Color(0xff6600EB),
           tabs: <Widget>[
             Tab(icon: Icon(Icons.home)),
             Tab(text: "VACCINE"),
