@@ -10,10 +10,13 @@ class MyLilOne extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return new MaterialApp(
-      title:"My Lil One",
+      title:"LIL ONE",
       theme: new ThemeData(
-        primaryColor: new Color(0xff6002EE),
-        accentColor: new Color(0xff7fcc91)
+        primaryColor: new Color(0xffC8A4F8),
+        accentColor: new Color(0xffFFFFFF),
+        textTheme: new TextTheme(
+          body1: new TextStyle(color:new Color(0xffC8A4F8),),
+        )
       ),
       debugShowCheckedModeBanner: false,
       home: new Home()

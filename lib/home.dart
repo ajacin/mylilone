@@ -41,7 +41,8 @@ Widget build(BuildContext context){
           controller: _tabController,
           indicatorColor: Colors.white,
           tabs: <Widget>[
-            Tab(text: "BASIC"),Tab(text: "VACCINE"),
+            Tab(icon: Icon(Icons.home)),
+            Tab(text: "VACCINE"),
           ],
         ),
         actions: <Widget>[
@@ -53,10 +54,6 @@ Widget build(BuildContext context){
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10.0),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10.0),
-          ),
-          Icon(Icons.home)
           
         ],
     ),
@@ -69,10 +66,10 @@ Widget build(BuildContext context){
       ),
       floatingActionButton: floatingButton
           ? FloatingActionButton(
-              backgroundColor: Colors.white,
+              backgroundColor: Theme.of(context).primaryColor,
               child: Icon(
                 Icons.add,
-                color: Theme.of(context).primaryColor,
+                color: Theme.of(context).accentColor,
               ),
               onPressed: () => print("open chats"),
             )
