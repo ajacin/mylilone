@@ -35,7 +35,7 @@ void initState() {
 Widget build(BuildContext context){
   return Scaffold(
     appBar: AppBar(
-      title: Text("LIL ONE"),
+      title: Text("ADAM"),
         elevation: 0.7,
         bottom: TabBar(
           controller: _tabController,

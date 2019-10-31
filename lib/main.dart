@@ -12,7 +12,7 @@ class MyLilOne extends StatelessWidget{
     return new MaterialApp(
       title:"LIL ONE",
       theme: new ThemeData(
-        primaryColor: new Color(0xffC8A4F8),
+        primaryColor: new Color(0xff5C6BC0),
         accentColor: new Color(0xffFFFFFF),
         textTheme: new TextTheme(
           body1: new TextStyle(color:new Color(0xffC8A4F8),),
