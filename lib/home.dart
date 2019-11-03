@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_lil_one/tabs/BasicInfoScreen.dart';
-import 'package:my_lil_one/tabs/VaccinationScreen.dart';
+import 'package:my_lil_one/tabs/DetailScreen.dart';
 
 class Home extends StatefulWidget{
   @override
@@ -66,7 +66,7 @@ Widget build(BuildContext context){
         controller: _tabController,
         children: <Widget>[
           BasicInfoScreen(),
-          VaccinationScreen(),
+          DetailScreen(),
         ],
       ),
       floatingActionButton: floatingButton
