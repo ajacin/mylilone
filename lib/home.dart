@@ -2,52 +2,68 @@ import 'package:flutter/material.dart';
 import 'package:my_lil_one/tabs/BasicInfoScreen.dart';
 import 'package:my_lil_one/tabs/DetailScreen.dart';
 
-class Home extends StatefulWidget{
+class Home extends StatefulWidget {
   @override
   _HomeState createState() => new _HomeState();
 }
 
-class _HomeState extends State<Home> with SingleTickerProviderStateMixin{
-
-TabController _tabController;
-bool floatingButton = true;
-
-@override
-
-void initState() {
+class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
+  TabController _tabController;
+  bool floatingButton = true;
+  String accountDropdownValue = "Adam";
+  @override
+  void initState() {
     super.initState();
-    _tabController = TabController(vsync:this,initialIndex: 0,length:2 );
-    _tabController.addListener((){
-    if(_tabController.index ==1){
+    _tabController = TabController(vsync: this, initialIndex: 0, length: 2);
+    _tabController.addListener(() {
+      if (_tabController.index == 1) {
         floatingButton = true;
       } else {
-        floatingButton =false;
+        floatingButton = false;
       }
 
-      setState(() {
-        
-      });
-    }
-      
-    );
+      setState(() {});
+    });
   }
 
-Widget build(BuildContext context){
-  return Scaffold(
-    appBar: AppBar(
-      title: Row(
-        children: <Widget>[
-          Text("Adam"),
-          Icon(Icons.arrow_drop_down),
-        ],
-      ),
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Row(
+          children: <Widget>[
+            DropdownButton(
+              value: accountDropdownValue,
+              icon: Icon(
+                Icons.arrow_drop_down,
+                color: Theme.of(context).accentColor,
+              ),
+              elevation: 16,
+              style: TextStyle(color: Theme.of(context).accentColor),
+              onChanged: (String newValue) {
+                setState(() {
+                  accountDropdownValue = newValue;
+                });
+              },
+              items: <String>['Adam', 'Eve', 'Kate']
+                  .map<DropdownMenuItem<String>>((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(
+                    value,
+                    style: TextStyle(color: Theme.of(context).accentColor),
+                  ),
+                );
+              }).toList(),
+            ),
+          ],
+        ),
         elevation: 0.7,
         bottom: TabBar(
           controller: _tabController,
           indicatorColor: Color(0xff6600EB),
           tabs: <Widget>[
             Tab(icon: Icon(Icons.home)),
-            Tab(icon:Icon(Icons.apps)),
+            Tab(icon: Icon(Icons.apps)),
           ],
         ),
         actions: <Widget>[
@@ -59,10 +75,9 @@ Widget build(BuildContext context){
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10.0),
           ),
-          
         ],
-    ),
-    body: TabBarView(
+      ),
+      body: TabBarView(
         controller: _tabController,
         children: <Widget>[
           BasicInfoScreen(),
@@ -79,6 +94,6 @@ Widget build(BuildContext context){
               onPressed: () => print("open chats"),
             )
           : null,
-  );
-}
+    );
+  }
 }
