@@ -50,13 +50,13 @@ class _BasicInfoScreenState extends State<BasicInfoScreen> {
                     CircularProfileAvatar(
                       'https://lh3.googleusercontent.com/tVRP409qAIh9vsuq213HESrrHIyAA5Zb5WkX_5WxqA8wgix7oknjSsu6jYiYxO0yDJo7sVvIhW0Pg4Zsr1OWIpSaLlbgeqVZqqFWBGV9WtRfO52rAlUx07x2s-DxWfTMDDKLBtzInRQ=w1454-h969-no', //sets image path, it should be a URL string. default value is empty string, if path is empty it will display only initials
                       radius: _avatarWidth,
-                      backgroundColor: Colors.transparent,
+                      backgroundColor: Colors.green[200],
                       borderWidth: 4,
                       initialsText: Text(
                         "ADAM",
                         style: TextStyle(fontSize: 20, color: Colors.white),
                       ),
-                      borderColor: Colors.white,
+                      borderColor: Theme.of(context).primaryColor,
                       elevation: 8.0,
                       foregroundColor: Colors.white.withOpacity(0.1),
                       cacheImage: true,

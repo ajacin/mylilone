@@ -15,22 +15,20 @@ class DetailScreen extends StatelessWidget {
         children: <Widget>[
           Container(
             padding: const EdgeInsets.all(8),
-            color: Theme.of(context).primaryColor,
-            child: Column(
-              children: <Widget>[
-                Icon(
-                  Icons.monetization_on,
-                  size: 70,
-                  color: Theme.of(context).accentColor,
-                ),
-                Text('EXPENSES',
-                    style: TextStyle(color: Theme.of(context).accentColor)),
+            // color: Theme.of(context).primaryColor,
+            decoration: new BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.red,
+                  blurRadius: 25.0, // has the effect of softening the shadow
+                  spreadRadius: 5.0, // has the effect of extending the shadow
+                  offset: Offset(
+                    0, // horizontal, move right 10
+                    0, // vertical, move down 10
+                  ),
+                )
               ],
             ),
-          ),
-          Container(
-            padding: const EdgeInsets.all(8),
-            color: Theme.of(context).primaryColor,
             child: Column(
               children: <Widget>[
                 Icon(
@@ -45,7 +43,20 @@ class DetailScreen extends StatelessWidget {
           ),
           Container(
             padding: const EdgeInsets.all(8),
-            color: Theme.of(context).primaryColor,
+            // color: Theme.of(context).primaryColor,
+            decoration: new BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.amber,
+                  blurRadius: 25.0, // has the effect of softening the shadow
+                  spreadRadius: 5.0, // has the effect of extending the shadow
+                  offset: Offset(
+                    0, // horizontal, move right 10
+                    0, // vertical, move down 10
+                  ),
+                )
+              ],
+            ),
             child: Column(
               children: <Widget>[
                 Icon(
@@ -54,6 +65,34 @@ class DetailScreen extends StatelessWidget {
                   color: Theme.of(context).accentColor,
                 ),
                 Text('LEARNING',
+                    style: TextStyle(color: Theme.of(context).accentColor)),
+              ],
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.all(8),
+            // color: Theme.of(context).primaryColor,
+            decoration: new BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.blue[300],
+                  blurRadius: 25.0, // has the effect of softening the shadow
+                  spreadRadius: 5.0, // has the effect of extending the shadow
+                  offset: Offset(
+                    0, // horizontal, move right 10
+                    0, // vertical, move down 10
+                  ),
+                )
+              ],
+            ),
+            child: Column(
+              children: <Widget>[
+                Icon(
+                  Icons.fastfood,
+                  size: 70,
+                  color: Theme.of(context).accentColor,
+                ),
+                Text('NUTRITION',
                     style: TextStyle(color: Theme.of(context).accentColor)),
               ],
             ),

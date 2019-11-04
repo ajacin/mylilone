@@ -12,11 +12,12 @@ class MyLilOne extends StatelessWidget{
     return new MaterialApp(
       title:"LIL ONE",
       theme: new ThemeData(
-        primaryColor: new Color(0xff6666CC),
+        primaryColor: new Color(0xff23B574),
         accentColor: new Color(0xffFFFFFF),
-        canvasColor: new Color(0xff1F3C8A),
+        canvasColor: new Color(0xff23B574),
+        splashColor: new Color(0xff23B574),
         textTheme: new TextTheme(
-          body1: new TextStyle(color:new Color(0xffC8A4F8),),
+          body1: new TextStyle(color:new Color(0xffFFFFFF),),
         )
       ),
       debugShowCheckedModeBanner: false,

@@ -29,16 +29,17 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.white,
         title: Row(
           children: <Widget>[
             DropdownButton(
               value: accountDropdownValue,
               icon: Icon(
                 Icons.arrow_drop_down,
-                color: Theme.of(context).accentColor,
+                color: Theme.of(context).primaryColor,
               ),
-              elevation: 16,
-              style: TextStyle(color: Theme.of(context).accentColor),
+              elevation: 40,
+              style: TextStyle(color: Theme.of(context).primaryColor),
               onChanged: (String newValue) {
                 setState(() {
                   accountDropdownValue = newValue;
@@ -57,10 +58,10 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
             ),
           ],
         ),
-        elevation: 0.7,
+        elevation: 7,
         bottom: TabBar(
           controller: _tabController,
-          indicatorColor: Color(0xff6600EB),
+          indicatorColor: Theme.of(context).accentColor,
           tabs: <Widget>[
             Tab(icon: Icon(Icons.home)),
             Tab(icon: Icon(Icons.apps)),
