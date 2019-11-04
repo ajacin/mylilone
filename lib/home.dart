@@ -36,7 +36,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
               value: accountDropdownValue,
               icon: Icon(
                 Icons.arrow_drop_down,
-                color: Theme.of(context).primaryColor,
+                color: Colors.black,
               ),
               elevation: 40,
               style: TextStyle(color: Theme.of(context).primaryColor),
@@ -51,7 +51,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                   value: value,
                   child: Text(
                     value,
-                    style: TextStyle(color: Theme.of(context).accentColor),
+                    style: TextStyle(color: Theme.of(context).primaryColor),
                   ),
                 );
               }).toList(),

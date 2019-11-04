@@ -14,7 +14,7 @@ class MyLilOne extends StatelessWidget{
       theme: new ThemeData(
         primaryColor: new Color(0xff23B574),
         accentColor: new Color(0xffFFFFFF),
-        canvasColor: new Color(0xff23B574),
+        canvasColor: new Color(0xffFFFFFF),
         splashColor: new Color(0xff23B574),
         textTheme: new TextTheme(
           body1: new TextStyle(color:new Color(0xffFFFFFF),),
