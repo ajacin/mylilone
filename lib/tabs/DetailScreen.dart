@@ -20,7 +20,7 @@ class DetailScreen extends StatelessWidget {
               boxShadow: [
                 BoxShadow(
                   color: Colors.red,
-                  blurRadius: 25.0, // has the effect of softening the shadow
+                  blurRadius: 15.0, // has the effect of softening the shadow
                   spreadRadius: 5.0, // has the effect of extending the shadow
                   offset: Offset(
                     0, // horizontal, move right 10
@@ -48,7 +48,7 @@ class DetailScreen extends StatelessWidget {
               boxShadow: [
                 BoxShadow(
                   color: Colors.amber,
-                  blurRadius: 25.0, // has the effect of softening the shadow
+                  blurRadius: 15.0, // has the effect of softening the shadow
                   spreadRadius: 5.0, // has the effect of extending the shadow
                   offset: Offset(
                     0, // horizontal, move right 10
@@ -76,7 +76,7 @@ class DetailScreen extends StatelessWidget {
               boxShadow: [
                 BoxShadow(
                   color: Colors.blue[300],
-                  blurRadius: 25.0, // has the effect of softening the shadow
+                  blurRadius: 15.0, // has the effect of softening the shadow
                   spreadRadius: 5.0, // has the effect of extending the shadow
                   offset: Offset(
                     0, // horizontal, move right 10
@@ -88,11 +88,123 @@ class DetailScreen extends StatelessWidget {
             child: Column(
               children: <Widget>[
                 Icon(
-                  Icons.fastfood,
+                  Icons.local_hospital,
                   size: 70,
                   color: Theme.of(context).accentColor,
                 ),
-                Text('NUTRITION',
+                Text('IMMUNITY',
+                    style: TextStyle(color: Theme.of(context).accentColor)),
+              ],
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.all(8),
+            // color: Theme.of(context).primaryColor,
+            decoration: new BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.teal,
+                  blurRadius: 15.0, // has the effect of softening the shadow
+                  spreadRadius: 5.0, // has the effect of extending the shadow
+                  offset: Offset(
+                    0, // horizontal, move right 10
+                    0, // vertical, move down 10
+                  ),
+                )
+              ],
+            ),
+            child: Column(
+              children: <Widget>[
+                Icon(
+                  Icons.directions_bike,
+                  size: 70,
+                  color: Theme.of(context).accentColor,
+                ),
+                Text('ACTIVITIES',
+                    style: TextStyle(color: Theme.of(context).accentColor)),
+              ],
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.all(8),
+            // color: Theme.of(context).primaryColor,
+            decoration: new BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.indigo,
+                  blurRadius: 15.0, // has the effect of softening the shadow
+                  spreadRadius: 5.0, // has the effect of extending the shadow
+                  offset: Offset(
+                    0, // horizontal, move right 10
+                    0, // vertical, move down 10
+                  ),
+                )
+              ],
+            ),
+            child: Column(
+              children: <Widget>[
+                Icon(
+                  Icons.link,
+                  size: 70,
+                  color: Theme.of(context).accentColor,
+                ),
+                Text('LINKS',
+                    style: TextStyle(color: Theme.of(context).accentColor)),
+              ],
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.all(8),
+            // color: Theme.of(context).primaryColor,
+            decoration: new BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.lime,
+                  blurRadius: 15.0, // has the effect of softening the shadow
+                  spreadRadius: 5.0, // has the effect of extending the shadow
+                  offset: Offset(
+                    0, // horizontal, move right 10
+                    0, // vertical, move down 10
+                  ),
+                )
+              ],
+            ),
+            child: Column(
+              children: <Widget>[
+                Icon(
+                  Icons.alarm,
+                  size: 70,
+                  color: Theme.of(context).accentColor,
+                ),
+                Text('REMINDERS',
+                    style: TextStyle(color: Theme.of(context).accentColor)),
+              ],
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.all(8),
+            // color: Theme.of(context).primaryColor,
+            decoration: new BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.yellow,
+                  blurRadius: 15.0, // has the effect of softening the shadow
+                  spreadRadius: 5.0, // has the effect of extending the shadow
+                  offset: Offset(
+                    0, // horizontal, move right 10
+                    0, // vertical, move down 10
+                  ),
+                )
+              ],
+            ),
+            child: Column(
+              children: <Widget>[
+                Icon(
+                  Icons.exposure_plus_1,
+                  size: 70,
+                  color: Theme.of(context).accentColor,
+                ),
+                Text('POINTS',
                     style: TextStyle(color: Theme.of(context).accentColor)),
               ],
             ),

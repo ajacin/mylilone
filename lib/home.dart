@@ -61,7 +61,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
         elevation: 7,
         bottom: TabBar(
           controller: _tabController,
-          indicatorColor: Theme.of(context).accentColor,
+          indicatorColor: Theme.of(context).primaryColor,
           tabs: <Widget>[
             Tab(icon: Icon(Icons.home)),
             Tab(icon: Icon(Icons.apps)),
